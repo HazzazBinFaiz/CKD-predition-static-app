@@ -79,18 +79,6 @@ pnpm build          # outputs a static site to dist/
 pnpm preview        # preview the production build locally
 ```
 
-## Deployment (GitHub Pages)
-
-A GitHub Actions workflow (`.github/workflows/deploy.yml`) builds and publishes the
-site automatically.
-
-1. In the repository: **Settings → Pages → Build and deployment → Source: GitHub Actions**.
-2. Commit and push to `main`, including `public/model.onnx` and `public/preprocess.json`.
-3. The site is published at `https://<username>.github.io/<repository>/`.
-
-The workflow sets the correct base path automatically from the repository name, so
-the model files load correctly under the published subpath.
-
 ## How the explanation works
 
 For each prediction, the app scores the patient, then re-scores the model once per
