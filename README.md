@@ -1,16 +1,20 @@
-# React + Vite
+# CKD Screening — static React app
 
-This template provides a minimal setup to get React working in Vite with HMR and some Oxlint rules.
+In-browser CKD prediction + local (per-patient) explanation. No backend.
 
-Currently, two official plugins are available:
+## Files you must add to `public/`
+- `model.onnx`        (your best model — CatBoost)
+- `preprocess.json`   (scaling + encoding info)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+Do NOT add `ckd_model_bundle.joblib` — it is a Python pickle and is not used
+by the web app.
 
-## React Compiler
+## Develop
+    pnpm install
+    pnpm dev
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## Build static site
+    pnpm build      # outputs to dist/
+    pnpm preview    # test the production build locally
 
-## Expanding the Oxlint configuration
-
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and Oxlint's TypeScript related rules in your project.
+Deploy the `dist/` folder to GitHub Pages, Netlify, Vercel, or any static host.
