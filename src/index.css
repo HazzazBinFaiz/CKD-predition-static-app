@@ -1,1 +1,4 @@
 @import "tailwindcss";
+
+html { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+@media print { @page { margin: 14mm; } }
