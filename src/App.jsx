@@ -227,7 +227,6 @@ export default function App() {
             Enter a patient's lab and clinical values for a prediction and a per-value explanation.
             Everything runs on your device.
           </p>
-          <div className="mt-3"><Badge>model: {pp.best_model_name || "CKD classifier"}</Badge></div>
         </header>
 
         <div className="mb-6"><Disclaimer /></div>
